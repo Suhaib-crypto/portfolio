@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Makenray Automations — AI · Automation · Growth</title>
+    <title>Mackenray Automations — AI · Automation · Growth</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -11,18 +11,18 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg:        #0A0912;
-            --bg-2:      #0e0d1a;
-            --bg-3:      #131223;
-            --border:    #1e1c33;
-            --border-hi: #2e2b4a;
-            --text:      #f0eeff;
-            --text-2:    #8a86b0;
+            --bg:        #080810;
+            --bg-2:      #0e0d1c;
+            --bg-3:      #131228;
+            --border:    #1a1830;
+            --border-hi: #252340;
+            --text:      #ffffff;
+            --text-2:    #8b88b0;
             --text-3:    #3a3760;
             --purple-lo: #3A1290;
             --purple:    #7B2FFF;
             --purple-hi: #D17BFF;
-            --glow:      rgba(123, 47, 255, 0.18);
+            --purple-glow: rgba(123, 47, 255, 0.35);
         }
 
         html { scroll-behavior: smooth; }
@@ -36,23 +36,21 @@
             overflow-x: hidden;
         }
 
-        /* noise overlay */
         body::after {
             content: '';
             position: fixed; inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
             pointer-events: none;
             z-index: 9000;
-            opacity: .35;
+            opacity: .3;
         }
 
         ::-webkit-scrollbar { width: 3px; }
         ::-webkit-scrollbar-track { background: var(--bg); }
         ::-webkit-scrollbar-thumb { background: var(--purple-lo); border-radius: 2px; }
 
-        /* ── Gradient text utility ── */
         .grad {
-            background: linear-gradient(90deg, var(--purple-hi) 0%, var(--purple) 55%, var(--purple-lo) 100%);
+            background: linear-gradient(90deg, var(--purple-hi) 0%, var(--purple) 60%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -63,12 +61,12 @@
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
-            padding: 22px 48px;
+            padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(10, 9, 18, 0.85);
-            backdrop-filter: blur(16px);
+            background: rgba(8, 8, 16, 0.8);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid transparent;
             transition: border-color 0.3s;
         }
@@ -78,142 +76,141 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 16px;
             font-weight: 600;
-            letter-spacing: -0.01em;
             text-decoration: none;
             color: var(--text);
-        }
-        .nav-logo span {
-            background: linear-gradient(90deg, var(--purple-hi), var(--purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            letter-spacing: -0.01em;
         }
 
-        .nav-links { display: flex; gap: 36px; list-style: none; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
         .nav-links a {
             color: var(--text-2);
             text-decoration: none;
-            font-size: 13px;
+            font-size: 14px;
             transition: color 0.2s;
         }
         .nav-links a:hover { color: var(--text); }
 
         .nav-cta {
-            padding: 9px 22px;
+            padding: 9px 20px;
             font-size: 13px;
             font-weight: 500;
-            font-family: 'Inter', sans-serif;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 8px;
             background: linear-gradient(135deg, var(--purple) 0%, var(--purple-lo) 100%);
             color: #fff;
-            transition: opacity 0.2s;
+            transition: opacity 0.2s, transform 0.2s;
+            border: 1px solid rgba(209,123,255,0.2);
         }
-        .nav-cta:hover { opacity: 0.85; }
-
-        /* ── Sections ── */
-        section {
-            padding: 120px 48px;
-            max-width: 980px;
-            margin: 0 auto;
-        }
-
-        .divider {
-            border: none;
-            border-top: 1px solid var(--border);
-            margin: 0 48px;
-        }
+        .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
 
         /* ── Hero ── */
         #hero {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            align-items: center;
             justify-content: center;
-            padding-top: 80px;
-            max-width: 100%;
-            padding-left: 48px;
-            padding-right: 48px;
+            text-align: center;
+            padding: 120px 24px 80px;
             position: relative;
+            overflow: hidden;
         }
 
-        /* hero background glow */
-        #hero::before {
-            content: '';
+        /* The glowing orb */
+        .orb {
             position: absolute;
-            top: 20%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -60%);
+            width: 700px;
+            height: 500px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .orb-inner {
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 50% 60%,
+                rgba(209,123,255,0.55) 0%,
+                rgba(123,47,255,0.45) 25%,
+                rgba(58,18,144,0.3) 50%,
+                transparent 75%
+            );
+            filter: blur(40px);
+            animation: orbPulse 6s ease-in-out infinite;
+        }
+        .orb-ring {
+            position: absolute;
+            bottom: 15%;
             left: 50%;
             transform: translateX(-50%);
-            width: 600px;
-            height: 400px;
-            background: radial-gradient(ellipse, rgba(123,47,255,0.12) 0%, transparent 70%);
-            pointer-events: none;
+            width: 380px;
+            height: 60px;
+            background: radial-gradient(ellipse,
+                rgba(209,123,255,0.6) 0%,
+                rgba(123,47,255,0.4) 40%,
+                transparent 70%
+            );
+            filter: blur(18px);
+            border-radius: 50%;
+        }
+        @keyframes orbPulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50%       { opacity: 1; transform: scale(1.06); }
         }
 
-        .hero-tag {
+        /* pill badge */
+        .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            font-size: 12px;
-            color: var(--text-2);
+            padding: 7px 16px;
+            background: rgba(123,47,255,0.12);
+            border: 1px solid rgba(123,47,255,0.3);
+            border-radius: 100px;
+            font-size: 13px;
+            color: var(--purple-hi);
             margin-bottom: 32px;
             opacity: 0;
             animation: fadeUp 0.8s ease forwards 0.2s;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
+            position: relative; z-index: 1;
         }
-        .hero-tag::before {
-            content: '';
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: var(--purple-hi);
-            animation: pulse 2s infinite;
-            flex-shrink: 0;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(209,123,255,0.4); }
-            50%       { opacity: 0.7; transform: scale(0.85); box-shadow: 0 0 0 6px rgba(209,123,255,0); }
+        .hero-badge::before {
+            content: '✦';
+            font-size: 10px;
         }
 
         .hero-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(48px, 7.5vw, 96px);
+            font-size: clamp(44px, 7vw, 88px);
             font-weight: 700;
             line-height: 1.0;
             letter-spacing: -0.04em;
-            margin-bottom: 12px;
+            margin-bottom: 24px;
             opacity: 0;
-            animation: fadeUp 0.8s ease forwards 0.35s;
+            animation: fadeUp 0.8s ease forwards 0.4s;
+            position: relative; z-index: 1;
+            max-width: 800px;
         }
-
-        .hero-tagline {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(14px, 1.5vw, 18px);
-            font-weight: 500;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: var(--text-3);
-            margin-bottom: 28px;
-            opacity: 0;
-            animation: fadeUp 0.8s ease forwards 0.5s;
-        }
-        .hero-tagline .dot { color: var(--purple); opacity: 0.6; }
 
         .hero-sub {
-            font-size: 18px;
+            font-size: clamp(16px, 2vw, 19px);
             color: var(--text-2);
             max-width: 500px;
-            line-height: 1.75;
-            margin-bottom: 52px;
+            line-height: 1.7;
+            margin-bottom: 44px;
             opacity: 0;
-            animation: fadeUp 0.8s ease forwards 0.65s;
+            animation: fadeUp 0.8s ease forwards 0.6s;
+            position: relative; z-index: 1;
         }
 
         .hero-cta {
             display: flex;
             gap: 14px;
+            justify-content: center;
             opacity: 0;
             animation: fadeUp 0.8s ease forwards 0.8s;
+            position: relative; z-index: 1;
         }
 
         @keyframes fadeUp {
@@ -228,81 +225,108 @@
             font-family: 'Inter', sans-serif;
             font-weight: 500;
             text-decoration: none;
-            border-radius: 7px;
+            border-radius: 8px;
             transition: all 0.2s;
             border: none;
             cursor: pointer;
             display: inline-block;
         }
         .btn-primary {
-            background: linear-gradient(135deg, var(--purple-hi) 0%, var(--purple) 50%, var(--purple-lo) 100%);
+            background: linear-gradient(135deg, var(--purple-hi) 0%, var(--purple) 60%, var(--purple-lo) 100%);
             color: #fff;
+            box-shadow: 0 0 30px rgba(123,47,255,0.4);
         }
-        .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+        .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 0 40px rgba(123,47,255,0.55); }
         .btn-outline {
-            background: transparent;
+            background: rgba(255,255,255,0.04);
             color: var(--text);
             border: 1px solid var(--border-hi);
         }
-        .btn-outline:hover { border-color: var(--purple); background: rgba(123,47,255,0.08); }
+        .btn-outline:hover { border-color: rgba(123,47,255,0.5); background: rgba(123,47,255,0.08); }
 
-        /* ── Scroll reveal ── */
-        .reveal {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.75s ease, transform 0.75s ease;
+        /* ── Divider ── */
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 0 40px;
         }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
-        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ── Sections ── */
+        section {
+            padding: 100px 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
         /* ── Section label ── */
         .section-label {
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.22em;
             color: var(--text-3);
-            margin-bottom: 52px;
+            margin-bottom: 48px;
             font-weight: 500;
         }
 
-        /* ── Services ── */
-        .services-grid {
+        /* ── Scroll reveal ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.08s; }
+        .reveal-delay-2 { transition-delay: 0.16s; }
+        .reveal-delay-3 { transition-delay: 0.24s; }
+        .reveal-delay-4 { transition-delay: 0.32s; }
+
+        /* ── Features grid ── */
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-        }
-        .service-card {
-            background: var(--bg-2);
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 28px;
-            transition: border-color 0.25s, background 0.25s;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 1px;
         }
-        .service-card:hover {
-            border-color: var(--purple);
-            background: var(--bg-3);
+        .feature-item {
+            background: var(--bg);
+            padding: 32px 28px;
+            transition: background 0.2s;
         }
-        .service-icon {
-            font-size: 22px;
+        .feature-item:hover { background: var(--bg-2); }
+        .feature-icon {
+            width: 36px; height: 36px;
             margin-bottom: 16px;
+            color: var(--text-2);
         }
-        .service-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 16px;
+        .feature-icon svg { width: 100%; height: 100%; }
+        .feature-title {
+            font-size: 14px;
             font-weight: 600;
             margin-bottom: 8px;
-            letter-spacing: -0.01em;
+            color: var(--text);
         }
-        .service-desc {
+        .feature-desc {
             font-size: 13px;
             color: var(--text-2);
-            line-height: 1.65;
+            line-height: 1.6;
         }
 
-        /* ── About strip ── */
+        /* second row of features */
+        .features-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        /* ── About ── */
         .about-grid {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -310,17 +334,16 @@
             align-items: start;
         }
         .about-text {
-            font-size: 19px;
-            line-height: 1.75;
+            font-size: 18px;
+            line-height: 1.8;
             color: var(--text-2);
         }
         .about-text strong { color: var(--text); font-weight: 500; }
 
         .stats-list { display: flex; flex-direction: column; gap: 28px; }
-        .stat-item {}
         .stat-num {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 36px;
+            font-size: 38px;
             font-weight: 700;
             letter-spacing: -0.03em;
             background: linear-gradient(90deg, var(--purple-hi), var(--purple));
@@ -334,7 +357,7 @@
         .project-card {
             background: var(--bg-2);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 36px;
             display: grid;
             grid-template-columns: 1fr auto;
@@ -346,11 +369,11 @@
             margin-bottom: 12px;
         }
         .project-card:hover {
-            border-color: var(--purple);
+            border-color: rgba(123,47,255,0.5);
             background: var(--bg-3);
-            box-shadow: 0 0 32px rgba(123,47,255,0.1);
+            box-shadow: 0 0 40px rgba(123,47,255,0.1);
         }
-        .project-number { font-size: 12px; color: var(--text-3); margin-bottom: 14px; font-family: 'Space Grotesk', sans-serif; }
+        .project-number { font-size: 11px; color: var(--text-3); margin-bottom: 14px; letter-spacing: 0.1em; }
         .project-title {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 22px;
@@ -372,50 +395,48 @@
             font-size: 20px;
             color: var(--text-3);
             transition: color 0.2s, transform 0.2s;
-            padding-top: 2px;
         }
         .project-card:hover .project-arrow { color: var(--purple-hi); transform: translate(4px, -4px); }
 
         /* ── Contact ── */
         #contact {
-            min-height: 55vh;
+            min-height: 50vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            text-align: center;
+            align-items: center;
         }
         .contact-heading {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(38px, 5vw, 68px);
+            font-size: clamp(36px, 5vw, 64px);
             font-weight: 700;
             letter-spacing: -0.03em;
             margin-bottom: 14px;
             line-height: 1.08;
         }
-        .contact-sub { font-size: 16px; color: var(--text-2); margin-bottom: 44px; }
-        .contact-links { display: flex; gap: 14px; flex-wrap: wrap; }
+        .contact-sub { font-size: 16px; color: var(--text-2); margin-bottom: 40px; }
+        .contact-links { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
         .contact-link {
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 14px 24px;
+            padding: 14px 26px;
             background: var(--bg-2);
             border: 1px solid var(--border-hi);
-            border-radius: 8px;
+            border-radius: 9px;
             text-decoration: none;
             color: var(--text);
             font-size: 14px;
             font-weight: 500;
             transition: all 0.2s;
         }
-        .contact-link:hover {
-            border-color: var(--purple);
-            background: rgba(123,47,255,0.08);
-        }
+        .contact-link:hover { border-color: rgba(123,47,255,0.5); background: rgba(123,47,255,0.08); }
         .contact-link svg { width: 17px; height: 17px; flex-shrink: 0; }
 
         /* ── Footer ── */
         footer {
-            padding: 28px 48px;
+            padding: 28px 40px;
             border-top: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
@@ -425,14 +446,14 @@
 
         /* ── Mobile ── */
         @media (max-width: 768px) {
-            nav { padding: 18px 24px; }
+            nav { padding: 16px 20px; }
             .nav-links { display: none; }
-            section { padding: 80px 24px; }
-            #hero { padding-left: 24px; padding-right: 24px; }
+            section { padding: 80px 20px; }
+            .features-grid, .features-grid-2 { grid-template-columns: repeat(2, 1fr); }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .services-grid { grid-template-columns: 1fr; }
-            .divider { margin: 0 24px; }
-            footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+            .divider { margin: 0 20px; }
+            footer { padding: 24px 20px; flex-direction: column; gap: 8px; text-align: center; }
+            .orb { width: 360px; height: 300px; }
         }
     </style>
 </head>
@@ -440,7 +461,7 @@
 
 <!-- Nav -->
 <nav id="nav">
-    <a href="#hero" class="nav-logo">Maken<span>ray</span></a>
+    <a href="#hero" class="nav-logo">Mackenray Automations</a>
     <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Work</a></li>
@@ -451,16 +472,22 @@
 
 <!-- Hero -->
 <section id="hero">
-    <div class="hero-tag">AI · Automation · Growth</div>
+    <!-- Glowing orb background -->
+    <div class="orb">
+        <div class="orb-inner"></div>
+        <div class="orb-ring"></div>
+    </div>
+
+    <div class="hero-badge">AI-powered systems for service businesses</div>
+
     <h1 class="hero-title">
-        <span class="grad">Makenray</span><br>Automations
+        <span class="grad">AI · Automation</span><br>· Growth
     </h1>
-    <p class="hero-tagline">
-        <span class="dot">—</span> AI · Automation · Growth <span class="dot">—</span>
-    </p>
+
     <p class="hero-sub">
         AI-powered receptionists and web systems for service businesses that don't miss calls.
     </p>
+
     <div class="hero-cta">
         <a href="#work" class="btn btn-primary">See our work</a>
         <a href="#contact" class="btn btn-outline">Work with us</a>
@@ -469,24 +496,85 @@
 
 <hr class="divider">
 
-<!-- Services -->
+<!-- Services / Features -->
 <section id="services">
-    <p class="section-label reveal">What we build</p>
-    <div class="services-grid">
-        <div class="service-card reveal reveal-delay-1">
-            <div class="service-icon">🤖</div>
-            <h3 class="service-title">AI Receptionists</h3>
-            <p class="service-desc">24/7 voice and chat agents that answer calls, book appointments, and qualify leads — so you never miss a customer.</p>
+    <p class="section-label reveal" style="text-align:center;margin-bottom:40px;">What we build</p>
+
+    <div class="features-grid reveal">
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"/>
+                </svg>
+            </div>
+            <div class="feature-title">AI Receptionists</div>
+            <div class="feature-desc">24/7 voice and chat agents that answer calls, book appointments, and qualify leads automatically.</div>
         </div>
-        <div class="service-card reveal reveal-delay-2">
-            <div class="service-icon">⚡</div>
-            <h3 class="service-title">Automation Systems</h3>
-            <p class="service-desc">End-to-end workflow automation that eliminates repetitive tasks, connects your tools, and scales your operations.</p>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+                </svg>
+            </div>
+            <div class="feature-title">Automation Systems</div>
+            <div class="feature-desc">End-to-end workflow automation that eliminates repetitive tasks and connects your tools seamlessly.</div>
         </div>
-        <div class="service-card reveal reveal-delay-3">
-            <div class="service-icon">🌐</div>
-            <h3 class="service-title">Web Systems</h3>
-            <p class="service-desc">Fast, conversion-focused websites and web apps built for service businesses that need to look and perform at a high level.</p>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253M3.157 7.582A8.959 8.959 0 003 12c0 .778.099 1.533.284 2.253"/>
+                </svg>
+            </div>
+            <div class="feature-title">Web Systems</div>
+            <div class="feature-desc">Fast, conversion-focused websites built for service businesses that need to perform at a high level.</div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+                </svg>
+            </div>
+            <div class="feature-title">Never Miss a Call</div>
+            <div class="feature-desc">Our AI handles inbound inquiries around the clock so every lead gets a response — not a voicemail.</div>
+        </div>
+    </div>
+
+    <div class="features-grid-2 reveal reveal-delay-1" style="margin-top:1px;">
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/>
+                </svg>
+            </div>
+            <div class="feature-title">Appointment Booking</div>
+            <div class="feature-desc">AI books, reschedules, and confirms appointments directly into your calendar without lifting a finger.</div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                </svg>
+            </div>
+            <div class="feature-title">Lead Qualification</div>
+            <div class="feature-desc">AI filters and qualifies leads before they reach you — so you only speak to serious prospects.</div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/>
+                </svg>
+            </div>
+            <div class="feature-title">Growth Analytics</div>
+            <div class="feature-desc">Track how your automation is performing — calls answered, leads captured, bookings made.</div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/>
+                </svg>
+            </div>
+            <div class="feature-title">Seamless Integration</div>
+            <div class="feature-desc">Connects with the tools you already use — CRMs, calendars, WhatsApp, email, and more.</div>
         </div>
     </div>
 </section>
@@ -498,18 +586,19 @@
     <p class="section-label reveal">About</p>
     <div class="about-grid">
         <div class="about-text reveal reveal-delay-1">
-            <strong>Makenray Automations</strong> is an AI and automation agency helping service businesses grow by eliminating the gaps where leads and revenue fall through the cracks. We build systems — not just websites.
+            <strong>Mackenray Automations</strong> is an AI and automation agency helping service businesses grow by eliminating the gaps where leads and revenue fall through the cracks.<br><br>
+            We don't just build websites — we build systems that work while you sleep.
         </div>
         <div class="stats-list reveal reveal-delay-2">
-            <div class="stat-item">
+            <div>
                 <div class="stat-num">3+</div>
                 <div class="stat-label">Projects delivered</div>
             </div>
-            <div class="stat-item">
+            <div>
                 <div class="stat-num">24/7</div>
-                <div class="stat-label">AI systems that never sleep</div>
+                <div class="stat-label">AI that never clocks out</div>
             </div>
-            <div class="stat-item">
+            <div>
                 <div class="stat-num">0</div>
                 <div class="stat-label">Missed calls for our clients</div>
             </div>
@@ -565,7 +654,6 @@
         </div>
         <span class="project-arrow">↗</span>
     </a>
-
 </section>
 
 <hr class="divider">
@@ -594,21 +682,19 @@
 </section>
 
 <footer>
-    <span class="footer-text">Makenray Automations © 2026</span>
+    <span class="footer-text">Mackenray Automations © 2026</span>
     <span class="footer-text">Built & deployed on Vercel</span>
 </footer>
 
 <script>
-    // Nav border on scroll
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
         nav.classList.toggle('scrolled', window.scrollY > 20);
     }, { passive: true });
 
-    // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
