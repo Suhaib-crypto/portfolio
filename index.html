@@ -544,6 +544,34 @@ section { padding: 110px 0; }
 .testi-name { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
 .testi-role { font-size: 12px; color: var(--muted); }
 
+/* ── FAQ ── */
+.faq-list {
+  margin-top: 56px;
+  max-width: 760px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.faq-item { padding: 0; overflow: hidden; }
+.faq-item summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 24px 28px;
+  font-size: 17px; font-weight: 600; letter-spacing: -0.02em;
+  color: #fff;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-size: 24px; font-weight: 400; line-height: 1;
+  color: var(--lavender);
+  transition: transform 0.3s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p {
+  padding: 0 28px 26px;
+  font-size: 15px; color: var(--muted); line-height: 1.75;
+  max-width: 640px;
+}
+
 /* ── CONTACT ── */
 .contact-layout {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -1239,6 +1267,42 @@ footer {
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">FAQ</div>
+      <h2 class="sec-h2">Questions,<br>Answered</h2>
+      <p class="sec-p">Everything you need to know before reaching out.</p>
+    </div>
+
+    <div class="faq-list reveal">
+      <details class="faq-item glass">
+        <summary>How long does a project take?</summary>
+        <p>Most websites are delivered in 7–14 days. AI automation builds typically take 5–10 days depending on complexity.</p>
+      </details>
+      <details class="faq-item glass">
+        <summary>What's included after launch?</summary>
+        <p>30 days of free revisions and bug fixes. Ongoing support available on request.</p>
+      </details>
+      <details class="faq-item glass">
+        <summary>Do I own the code?</summary>
+        <p>Yes. Full ownership transferred on final payment — no lock-in, no monthly fees unless you choose a maintenance plan.</p>
+      </details>
+      <details class="faq-item glass">
+        <summary>Do you work with businesses outside Bahrain?</summary>
+        <p>Yes. We work with service businesses across the Gulf region remotely.</p>
+      </details>
+      <details class="faq-item glass">
+        <summary>How do we get started?</summary>
+        <p>Send us a message via the contact form below. We'll reply within 24 hours to discuss your project.</p>
+      </details>
     </div>
   </div>
 </section>
