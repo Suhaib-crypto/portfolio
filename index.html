@@ -16,7 +16,7 @@
   --border: rgba(123,47,255,0.15);
   --purple: #7B2FFF;
   --lavender: #D17BFF;
-  --muted: rgba(255,255,255,0.55);
+  --muted: rgba(255,255,255,0.72);
   --radius: 20px;
 }
 
@@ -299,6 +299,24 @@ nav {
 }
 .btn-instagram:hover { transform: translateY(-2px); opacity: 0.92; }
 
+/* Hero only: demote social CTAs to quiet text links so the primary dominates */
+.hero-actions .btn-whatsapp,
+.hero-actions .btn-instagram {
+  background: none;
+  box-shadow: none;
+  color: var(--muted);
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  min-height: 0;
+}
+.hero-actions .btn-whatsapp:hover,
+.hero-actions .btn-instagram:hover {
+  background: none;
+  transform: none;
+  color: #fff;
+}
+
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 8px;
   color: var(--muted); text-decoration: none;
@@ -417,6 +435,9 @@ section { padding: 110px 0; }
 .card-z { position: relative; z-index: 1; }
 
 /* ── HOW IT WORKS ── */
+#how-it-works {
+  background: linear-gradient(180deg, rgba(123,47,255,0.07), rgba(123,47,255,0.02));
+}
 .hiw-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 16px; margin-top: 56px;
