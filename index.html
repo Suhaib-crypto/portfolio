@@ -480,6 +480,19 @@ section { padding: 110px 0; }
   transition: color 0.25s, gap 0.25s;
 }
 .result-card:hover .result-link { color: var(--lavender); gap: 14px; }
+.project-thumb {
+  position: relative; width: 100%;
+  padding-top: 56.25%;
+  background: #1a1a2e;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+.project-thumb img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
 
 /* ── TESTIMONIALS ── */
 .testimonials-grid {
@@ -1136,6 +1149,7 @@ footer {
       <a href="https://nautilus-sand.vercel.app/" target="_blank" rel="noopener" class="result-card glass" data-reveal>
         <div class="spotlight"></div>
         <div class="card-z">
+          <div class="project-thumb"><img alt="Nautilus — live site preview" loading="lazy"></div>
           <div class="result-label">Web Design</div>
           <h3>Nautilus</h3>
           <p>A sophisticated web platform showcasing modern design principles and seamless user interactions.</p>
@@ -1145,6 +1159,7 @@ footer {
       <a href="https://arcwell.vercel.app/" target="_blank" rel="noopener" class="result-card glass" data-reveal>
         <div class="spotlight"></div>
         <div class="card-z">
+          <div class="project-thumb"><img alt="Arcwell — live site preview" loading="lazy"></div>
           <div class="result-label">Brand Experience</div>
           <h3>Arcwell</h3>
           <p>Minimalist brand identity translated into an immersive digital presence with precision-crafted UI.</p>
@@ -1154,6 +1169,7 @@ footer {
       <a href="https://northgate-medical-centre.vercel.app/" target="_blank" rel="noopener" class="result-card glass" data-reveal>
         <div class="spotlight"></div>
         <div class="card-z">
+          <div class="project-thumb"><img alt="Northgate Medical Centre — live site preview" loading="lazy"></div>
           <div class="result-label">Healthcare Platform</div>
           <h3>Northgate Medical Centre</h3>
           <p>User-centric healthcare portal designed for accessibility, trust, and seamless patient journeys.</p>
@@ -1163,6 +1179,7 @@ footer {
       <a href="https://veyra-lyart.vercel.app/" target="_blank" rel="noopener" class="result-card glass" data-reveal>
         <div class="spotlight"></div>
         <div class="card-z">
+          <div class="project-thumb"><img alt="Veyra — live site preview" loading="lazy"></div>
           <div class="result-label">E-Commerce</div>
           <h3>Veyra</h3>
           <p>High-conversion e-commerce experience built around elegant product storytelling and fast checkouts.</p>
@@ -1172,6 +1189,7 @@ footer {
       <a href="https://mackenray-automations.vercel.app/lumina.html" target="_blank" rel="noopener" class="result-card glass" data-reveal style="grid-column: 1 / -1;">
         <div class="spotlight"></div>
         <div class="card-z">
+          <div class="project-thumb"><img alt="Lumina — live site preview" loading="lazy"></div>
           <div class="result-label">AI SaaS App</div>
           <h3>Lumina</h3>
           <p>AI-powered networked note-taking app that helps users connect ideas, build a second brain, and think more clearly.</p>
