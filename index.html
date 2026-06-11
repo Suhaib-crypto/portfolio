@@ -285,24 +285,33 @@ nav {
 
 .btn-whatsapp {
   display: inline-flex; align-items: center; gap: 9px;
-  background: #25D366; color: #fff; text-decoration: none;
+  background: rgba(123,47,255,0.06); color: #fff; text-decoration: none;
   padding: 16px 28px; border-radius: 100px;
   font-size: 15px; font-weight: 600;
+  border: 1px solid var(--border);
   transition: all 0.3s ease;
   min-height: 52px;
 }
-.btn-whatsapp:hover { background: #1ebe5b; transform: translateY(-2px); }
+.btn-whatsapp:hover {
+  background: rgba(123,47,255,0.12);
+  border-color: var(--purple);
+  transform: translateY(-2px);
+}
 
 .btn-instagram {
   display: inline-flex; align-items: center; gap: 9px;
-  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  color: #fff; text-decoration: none;
+  background: rgba(123,47,255,0.06); color: #fff; text-decoration: none;
   padding: 16px 28px; border-radius: 100px;
   font-size: 15px; font-weight: 600;
+  border: 1px solid var(--border);
   transition: all 0.3s ease;
   min-height: 52px;
 }
-.btn-instagram:hover { transform: translateY(-2px); opacity: 0.92; }
+.btn-instagram:hover {
+  background: rgba(123,47,255,0.12);
+  border-color: var(--purple);
+  transform: translateY(-2px);
+}
 
 /* Hero only: demote social CTAs to quiet text links so the primary dominates */
 .hero-actions .btn-whatsapp,
